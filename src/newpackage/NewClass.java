@@ -5,10 +5,7 @@
  */
 package newpackage;
 
-/**
- *
- * @author usuario
- */
+
 public class NewClass {
-    
+    //Probando este git
 }
