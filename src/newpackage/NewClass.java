@@ -7,6 +7,6 @@ package newpackage;
 
 
 public class NewClass {
-    
+    public int dato;
     //probando esto prueba 3 11:38
 }
