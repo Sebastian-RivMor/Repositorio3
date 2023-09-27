@@ -8,5 +8,6 @@ package newpackage;
 
 public class NewClass {
     public int dato;
+    public String Nombre;
     //probando esto prueba 3 11:38
 }
