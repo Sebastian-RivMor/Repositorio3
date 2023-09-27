@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package newpackage;
 
 
 public class NewClass {
-    public int dato;
-    public String Nombre;
-    //probando esto prueba 3 11:38
+    
+    //No usar esta Archivo No se puede eliminar
+    
 }
