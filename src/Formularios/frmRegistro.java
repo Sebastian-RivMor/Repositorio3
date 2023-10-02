@@ -4,7 +4,10 @@
  */
 package Formularios;
 
-import Clases.consultas;
+
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,9 +18,12 @@ public class frmRegistro extends javax.swing.JFrame {
     /**
      * Creates new form Registro
      */
+    private Map<String, String> usuarios = new HashMap<>();
+    
     public frmRegistro() {
         initComponents();
         this.setLocationRelativeTo(this);
+        
     }
 
     /**
@@ -34,20 +40,23 @@ public class frmRegistro extends javax.swing.JFrame {
         jtextUsuario_Registrar = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        jtextContraseña_Registrar = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
+        jtextContraseña_Registrar = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(112, 145, 255));
+        jPanel1.setLayout(null);
 
         jLabel6.setBackground(new java.awt.Color(112, 145, 255));
         jLabel6.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel6.setText("Nombre de usuario:");
         jLabel6.setToolTipText("");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(63, 81, 140, 26);
 
         jtextUsuario_Registrar.setBackground(new java.awt.Color(112, 145, 255));
         jtextUsuario_Registrar.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
@@ -59,30 +68,29 @@ public class frmRegistro extends javax.swing.JFrame {
                 jtextUsuario_RegistrarActionPerformed(evt);
             }
         });
+        jPanel1.add(jtextUsuario_Registrar);
+        jtextUsuario_Registrar.setBounds(207, 81, 215, 26);
 
         jSeparator1.setBackground(new java.awt.Color(112, 145, 255));
+        jPanel1.add(jSeparator1);
+        jSeparator1.setBounds(207, 113, 215, 12);
 
         jLabel7.setBackground(new java.awt.Color(112, 145, 255));
         jLabel7.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
         jLabel7.setText("Contraseña:");
         jLabel7.setToolTipText("");
-
-        jtextContraseña_Registrar.setBackground(new java.awt.Color(112, 145, 255));
-        jtextContraseña_Registrar.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        jtextContraseña_Registrar.setForeground(new java.awt.Color(255, 255, 255));
-        jtextContraseña_Registrar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jtextContraseña_Registrar.setBorder(null);
-        jtextContraseña_Registrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtextContraseña_RegistrarActionPerformed(evt);
-            }
-        });
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(115, 143, 88, 26);
 
         jSeparator2.setBackground(new java.awt.Color(112, 145, 255));
+        jPanel1.add(jSeparator2);
+        jSeparator2.setBounds(207, 175, 215, 12);
 
         jLabel1.setFont(new java.awt.Font("Lucida Sans", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Registrar");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(184, 16, 148, 30);
 
         btnRegresar.setBackground(new java.awt.Color(60, 78, 234));
         btnRegresar.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
@@ -94,6 +102,8 @@ public class frmRegistro extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
+        jPanel1.add(btnRegresar);
+        btnRegresar.setBounds(86, 194, 117, 23);
 
         btnGuardar.setBackground(new java.awt.Color(60, 78, 234));
         btnGuardar.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
@@ -104,61 +114,10 @@ public class frmRegistro extends javax.swing.JFrame {
                 btnGuardarActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jSeparator2)
-                                    .addComponent(jtextContraseña_Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jSeparator1)
-                                    .addComponent(jtextUsuario_Registrar, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(184, 184, 184)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(btnRegresar)
-                        .addGap(77, 77, 77)
-                        .addComponent(btnGuardar)))
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                    .addComponent(jtextUsuario_Registrar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtextContraseña_Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardar))
-                .addGap(52, 52, 52))
-        );
+        jPanel1.add(btnGuardar);
+        btnGuardar.setBounds(280, 193, 89, 25);
+        jPanel1.add(jtextContraseña_Registrar);
+        jtextContraseña_Registrar.setBounds(220, 140, 200, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -179,10 +138,6 @@ public class frmRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtextUsuario_RegistrarActionPerformed
 
-    private void jtextContraseña_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtextContraseña_RegistrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jtextContraseña_RegistrarActionPerformed
-
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
@@ -192,8 +147,29 @@ public class frmRegistro extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        consultas con=new consultas();
-        con.guardarUsuario(jtextUsuario_Registrar.getText(),jtextContraseña_Registrar.getText());
+        String nombreUsuario = jtextUsuario_Registrar.getText(); // txtNombreUsuario es un campo de texto donde se ingresa el nombre de usuario
+        String contrasena = new String(jtextContraseña_Registrar.getPassword());
+ // txtContrasena es un campo de contraseña
+
+    // Verificar si el nombre de usuario ya existe
+    if (usuarios.containsKey(nombreUsuario)) {
+        JOptionPane.showMessageDialog(this, "El nombre de usuario ya existe", "Registro", JOptionPane.ERROR_MESSAGE);
+        return; // Salir del método si el nombre de usuario ya existe
+    }
+
+    // Agregar el nuevo usuario al Map
+    usuarios.put(nombreUsuario, contrasena);
+
+    // Mostrar un mensaje de confirmación
+    JOptionPane.showMessageDialog(this, "Usuario registrado con éxito", "Registro", JOptionPane.INFORMATION_MESSAGE);
+
+    // Limpiar el formulario después de guardar
+    jtextUsuario_Registrar.setText("");
+    jtextContraseña_Registrar.setText("");
+    
+    usuarios.put(nombreUsuario, contrasena);
+    System.out.println("Usuario registrado: " + nombreUsuario + " Contraseña: " + contrasena);
+
         
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -242,7 +218,7 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jtextContraseña_Registrar;
+    private javax.swing.JPasswordField jtextContraseña_Registrar;
     private javax.swing.JTextField jtextUsuario_Registrar;
     // End of variables declaration//GEN-END:variables
 }

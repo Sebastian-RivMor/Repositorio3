@@ -2,9 +2,14 @@
 package Formularios;
 
 import Clases.consultas;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.JOptionPane;
 
 
 public class frmInicio_Session extends javax.swing.JFrame {
+
+    private Map<String, String> usuarios = new HashMap<>();
 
     
     public frmInicio_Session() {
@@ -26,7 +31,7 @@ public class frmInicio_Session extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jtxtUsuario = new javax.swing.JTextField();
+        jtextUsuario_IniciarSesion = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -34,7 +39,7 @@ public class frmInicio_Session extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jbtnIniciar_Session = new javax.swing.JButton();
         jbtnRegistrar = new javax.swing.JButton();
-        jtextContraseña = new javax.swing.JPasswordField();
+        jtextContraseña_IniciarSesion = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,11 +58,11 @@ public class frmInicio_Session extends javax.swing.JFrame {
         jLabel3.setText("Contraseña:");
         jLabel3.setToolTipText("");
 
-        jtxtUsuario.setBackground(new java.awt.Color(112, 145, 255));
-        jtxtUsuario.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        jtxtUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        jtxtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jtxtUsuario.setBorder(null);
+        jtextUsuario_IniciarSesion.setBackground(new java.awt.Color(112, 145, 255));
+        jtextUsuario_IniciarSesion.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jtextUsuario_IniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        jtextUsuario_IniciarSesion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtextUsuario_IniciarSesion.setBorder(null);
 
         jSeparator1.setBackground(new java.awt.Color(112, 145, 255));
 
@@ -95,10 +100,10 @@ public class frmInicio_Session extends javax.swing.JFrame {
             }
         });
 
-        jtextContraseña.setBackground(new java.awt.Color(112, 145, 255));
-        jtextContraseña.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        jtextContraseña.setForeground(new java.awt.Color(255, 255, 255));
-        jtextContraseña.setBorder(null);
+        jtextContraseña_IniciarSesion.setBackground(new java.awt.Color(112, 145, 255));
+        jtextContraseña_IniciarSesion.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jtextContraseña_IniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        jtextContraseña_IniciarSesion.setBorder(null);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,10 +116,10 @@ public class frmInicio_Session extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtxtUsuario)
+                    .addComponent(jtextUsuario_IniciarSesion)
                     .addComponent(jSeparator1)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jtextContraseña))
+                    .addComponent(jtextContraseña_IniciarSesion))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(129, 129, 129)
@@ -152,7 +157,7 @@ public class frmInicio_Session extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtxtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addComponent(jtextUsuario_IniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -160,7 +165,7 @@ public class frmInicio_Session extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(jtextContraseña))
+                    .addComponent(jtextContraseña_IniciarSesion))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
@@ -186,10 +191,15 @@ public class frmInicio_Session extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnIniciar_SessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnIniciar_SessionActionPerformed
-        // TODO add your handling code here:
-            consultas con =new consultas();
-            con.consultarUsuario(jtxtUsuario.getText(),jtextContraseña.getText());
-        
+        String nombreUsuario = jtextUsuario_IniciarSesion.getText().trim(); // Utiliza el campo de texto correcto para el nombre de usuario en el inicio de sesión
+    String contrasena = new String(jtextContraseña_IniciarSesion.getPassword()); // Utiliza el campo de contraseña correcto en el inicio de sesión
+
+    // Verificar si el nombre de usuario y contraseña coinciden con los valores en el Map
+    if (usuarios.containsKey(nombreUsuario) && usuarios.get(nombreUsuario).equals(contrasena)) {
+        JOptionPane.showMessageDialog(this, "Sesión exitosa", "Inicio de Sesión", JOptionPane.INFORMATION_MESSAGE);
+    } else {
+        JOptionPane.showMessageDialog(this, "Nombre de usuario o contraseña incorrectos", "Inicio de Sesión", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_jbtnIniciar_SessionActionPerformed
 
     private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
@@ -246,7 +256,7 @@ public class frmInicio_Session extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton jbtnIniciar_Session;
     private javax.swing.JButton jbtnRegistrar;
-    private javax.swing.JPasswordField jtextContraseña;
-    private javax.swing.JTextField jtxtUsuario;
+    private javax.swing.JPasswordField jtextContraseña_IniciarSesion;
+    private javax.swing.JTextField jtextUsuario_IniciarSesion;
     // End of variables declaration//GEN-END:variables
 }
