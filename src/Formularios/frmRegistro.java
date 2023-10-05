@@ -5,6 +5,8 @@
 package Formularios;
 
 
+import Clases.ListaUsuarios;
+import Clases.consultas;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -37,14 +39,14 @@ public class frmRegistro extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jtextUsuario_Registrar = new javax.swing.JTextField();
+        jtextContraseña = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
-        jtextContraseña_Registrar = new javax.swing.JPasswordField();
+        jtextUsuario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,18 +60,18 @@ public class frmRegistro extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(63, 81, 140, 26);
 
-        jtextUsuario_Registrar.setBackground(new java.awt.Color(112, 145, 255));
-        jtextUsuario_Registrar.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
-        jtextUsuario_Registrar.setForeground(new java.awt.Color(255, 255, 255));
-        jtextUsuario_Registrar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jtextUsuario_Registrar.setBorder(null);
-        jtextUsuario_Registrar.addActionListener(new java.awt.event.ActionListener() {
+        jtextContraseña.setBackground(new java.awt.Color(112, 145, 255));
+        jtextContraseña.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jtextContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        jtextContraseña.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtextContraseña.setBorder(null);
+        jtextContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jtextUsuario_RegistrarActionPerformed(evt);
+                jtextContraseñaActionPerformed(evt);
             }
         });
-        jPanel1.add(jtextUsuario_Registrar);
-        jtextUsuario_Registrar.setBounds(207, 81, 215, 26);
+        jPanel1.add(jtextContraseña);
+        jtextContraseña.setBounds(210, 140, 215, 26);
 
         jSeparator1.setBackground(new java.awt.Color(112, 145, 255));
         jPanel1.add(jSeparator1);
@@ -116,8 +118,19 @@ public class frmRegistro extends javax.swing.JFrame {
         });
         jPanel1.add(btnGuardar);
         btnGuardar.setBounds(280, 193, 89, 25);
-        jPanel1.add(jtextContraseña_Registrar);
-        jtextContraseña_Registrar.setBounds(220, 140, 200, 30);
+
+        jtextUsuario.setBackground(new java.awt.Color(112, 145, 255));
+        jtextUsuario.setFont(new java.awt.Font("Lucida Sans", 1, 14)); // NOI18N
+        jtextUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        jtextUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jtextUsuario.setBorder(null);
+        jtextUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtextUsuarioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jtextUsuario);
+        jtextUsuario.setBounds(207, 81, 215, 26);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,9 +147,9 @@ public class frmRegistro extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jtextUsuario_RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtextUsuario_RegistrarActionPerformed
+    private void jtextContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtextContraseñaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jtextUsuario_RegistrarActionPerformed
+    }//GEN-LAST:event_jtextContraseñaActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
@@ -147,31 +160,23 @@ public class frmRegistro extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
-        String nombreUsuario = jtextUsuario_Registrar.getText(); // txtNombreUsuario es un campo de texto donde se ingresa el nombre de usuario
-        String contrasena = new String(jtextContraseña_Registrar.getPassword());
- // txtContrasena es un campo de contraseña
-
-    // Verificar si el nombre de usuario ya existe
-    if (usuarios.containsKey(nombreUsuario)) {
-        JOptionPane.showMessageDialog(this, "El nombre de usuario ya existe", "Registro", JOptionPane.ERROR_MESSAGE);
-        return; // Salir del método si el nombre de usuario ya existe
-    }
-
-    // Agregar el nuevo usuario al Map
-    usuarios.put(nombreUsuario, contrasena);
-
-    // Mostrar un mensaje de confirmación
-    JOptionPane.showMessageDialog(this, "Usuario registrado con éxito", "Registro", JOptionPane.INFORMATION_MESSAGE);
-
-    // Limpiar el formulario después de guardar
-    jtextUsuario_Registrar.setText("");
-    jtextContraseña_Registrar.setText("");
-    
-    usuarios.put(nombreUsuario, contrasena);
-    System.out.println("Usuario registrado: " + nombreUsuario + " Contraseña: " + contrasena);
-
+        String nombreUsuario = jtextUsuario.getText(); 
+        String contrasena = jtextContraseña.getText();
+        consultas obj = new consultas();
+        if(consultas.verificarUsuarioNuevo(nombreUsuario)==-1){
+            obj.setNombreUsuario(nombreUsuario);
+            obj.setContrasena(contrasena);
+            ListaUsuarios.agregar(obj);
+            JOptionPane.showMessageDialog(this, "SE REGISTRÓ CORRECTAMENTE");
+        }else{
+            JOptionPane.showConfirmDialog(this, "Este Nombre está en uso");
+        }
         
     }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void jtextUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtextUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtextUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,7 +223,7 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JPasswordField jtextContraseña_Registrar;
-    private javax.swing.JTextField jtextUsuario_Registrar;
+    private javax.swing.JTextField jtextContraseña;
+    private javax.swing.JTextField jtextUsuario;
     // End of variables declaration//GEN-END:variables
 }

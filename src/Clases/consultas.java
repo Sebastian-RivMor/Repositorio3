@@ -1,13 +1,11 @@
 package Clases;
 
+import java.util.Vector;
+
 public class consultas {
     private String nombreUsuario;
     private String contrasena;
 
-    public consultas(String nombreUsuario, String contrasena) {
-        this.nombreUsuario = nombreUsuario;
-        this.contrasena = contrasena;
-    }
 
     public String getNombreUsuario() {
         return nombreUsuario;
@@ -25,5 +23,30 @@ public class consultas {
         this.contrasena = contrasena;
     }
     
+    public static int verificarUsuarioNuevo(String usuario){
+        Vector lista=mostrar();
+        consultas obj;
+        for (int i = 0; i < lista.size(); i++) {
+            obj = (consultas)lista.elementAt(i);
+            if(obj.getNombreUsuario().equalsIgnoreCase(usuario))
+            return i;
+        }
+        return -1;
+    }
     
+    public static int verificarInicioSesion(String usuario, String contrasena){
+        Vector lista = mostrar();
+        consultas obj;
+        for (int i = 0; i < lista.size(); i++) {
+            obj = (consultas) lista.elementAt(i);
+            if(obj.getNombreUsuario().equalsIgnoreCase(usuario) && obj.getContrasena().equals(contrasena)){
+                return 1;
+            }
+        }
+        return -1;
+    }
+    
+    public static Vector mostrar(){
+        return ListaUsuarios.mostrar();
+    }
 }
