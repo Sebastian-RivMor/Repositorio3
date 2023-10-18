@@ -35,6 +35,11 @@ public class FrmActividad extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jButton1.setBorder(javax.swing.BorderFactory.createTitledBorder("Área de empleado"));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(480, 100, 140, 130);
 
@@ -46,8 +51,15 @@ public class FrmActividad extends javax.swing.JFrame {
         getContentPane().add(jButton6);
         jButton6.setBounds(270, 100, 140, 130);
 
-        pack();
+        setSize(new java.awt.Dimension(689, 411));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        FrmAreaEmpleado abrir = new FrmAreaEmpleado();
+        abrir.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
