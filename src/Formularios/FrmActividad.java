@@ -5,6 +5,12 @@
  */
 package Formularios;
 
+import Ventanas.Inventario;
+import Ventanas.Registro_Ventas;
+import Ventanas.Venta_Empleado;
+
+
+
 /**
  *
  * @author usuario
@@ -27,48 +33,87 @@ public class FrmActividad extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        EscritorioPrincipal = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
+        getContentPane().add(EscritorioPrincipal);
+        EscritorioPrincipal.setBounds(0, 0, 670, 380);
 
-        jButton1.setBorder(javax.swing.BorderFactory.createTitledBorder("Área de empleado"));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jMenu1.setText("Archivo");
+
+        jMenuItem5.setText("Salir");
+        jMenu1.add(jMenuItem5);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Gerente");
+
+        jMenuItem1.setText("Inventario");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(480, 100, 140, 130);
+        jMenu2.add(jMenuItem1);
 
-        jButton5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Registrar Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem2.setText("Registro ventas");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                jMenuItem2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(50, 100, 140, 130);
+        jMenu2.add(jMenuItem2);
 
-        jButton6.setBorder(javax.swing.BorderFactory.createTitledBorder("Verificar ventas"));
-        getContentPane().add(jButton6);
-        jButton6.setBounds(270, 100, 140, 130);
+        jMenuBar1.add(jMenu2);
 
-        setSize(new java.awt.Dimension(689, 411));
+        jMenu3.setText("Empleado");
+
+        jMenuItem3.setText("Seleccionar Turno");
+        jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setText("Venta");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
+
+        setSize(new java.awt.Dimension(690, 440));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        FrmAreaEmpleado abrir = new FrmAreaEmpleado();
-        abrir.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Inventario verin = new Inventario();
+        EscritorioPrincipal.add(verin);
+        verin.show();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Registro_Ventas reve = new Registro_Ventas();
+        EscritorioPrincipal.add(reve);
+        reve.show();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Venta_Empleado venem = new Venta_Empleado();
+        EscritorioPrincipal.add(venem);
+        venem.show();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -106,8 +151,15 @@ public class FrmActividad extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JDesktopPane EscritorioPrincipal;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     // End of variables declaration//GEN-END:variables
 }
