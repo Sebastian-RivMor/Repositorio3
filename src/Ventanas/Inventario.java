@@ -27,24 +27,83 @@ public class Inventario extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton3 = new javax.swing.JButton();
+        jTextField6 = new javax.swing.JTextField();
+
         setClosable(true);
         setTitle("Inventario");
+        getContentPane().setLayout(null);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 591, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
-        );
+        jTextField2.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre"));
+        getContentPane().add(jTextField2);
+        jTextField2.setBounds(30, 20, 130, 50);
 
-        pack();
+        jTextField3.setBorder(javax.swing.BorderFactory.createTitledBorder("Caducidad"));
+        getContentPane().add(jTextField3);
+        jTextField3.setBounds(190, 20, 130, 50);
+
+        jTextField4.setBorder(javax.swing.BorderFactory.createTitledBorder("Precio"));
+        getContentPane().add(jTextField4);
+        jTextField4.setBounds(190, 100, 130, 50);
+
+        jTextField5.setBorder(javax.swing.BorderFactory.createTitledBorder("Codigo"));
+        getContentPane().add(jTextField5);
+        jTextField5.setBounds(350, 20, 130, 50);
+
+        jButton1.setText("Eliminar");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(310, 180, 120, 50);
+
+        jButton2.setText("Nuevo Producto");
+        getContentPane().add(jButton2);
+        jButton2.setBounds(30, 180, 120, 50);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(20, 250, 460, 230);
+
+        jButton3.setText("Agregar ");
+        getContentPane().add(jButton3);
+        jButton3.setBounds(170, 180, 120, 50);
+
+        jTextField6.setBorder(javax.swing.BorderFactory.createTitledBorder("Cantidad"));
+        getContentPane().add(jTextField6);
+        jTextField6.setBounds(30, 100, 130, 50);
+
+        setBounds(0, 0, 520, 531);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
