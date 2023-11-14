@@ -5,17 +5,30 @@
  */
 package Ventanas;
 
+import Clases.Metodo;
+import Clases.Medicamento;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author usuario
  */
 public class Inventario extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Inventario
-     */
+    Medicamento medicamento = new Medicamento();
+    Metodo metodos = new Metodo();
+    
+    DefaultTableModel mdltabla;
+    Vector vCabeceras = new Vector();
     public Inventario() {
         initComponents();
+        
+        vCabeceras.addElement("Codigo");
+        vCabeceras.addElement("Nombre");
+        vCabeceras.addElement("Cantidad");
+        vCabeceras.addElement("Fecha. Cad");
+        vCabeceras.addElement("Precio");
+        tbaregi.setModel(mdltabla);
     }
 
     /**
@@ -27,46 +40,51 @@ public class Inventario extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        txtNombreMed = new javax.swing.JTextField();
+        txtCadMedicamen = new javax.swing.JTextField();
+        txtPreMedica = new javax.swing.JTextField();
+        txtCodMedic = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnMostrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton3 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
+        tbaregi = new javax.swing.JTable();
+        btnAgregar = new javax.swing.JButton();
+        txtCatMEdic = new javax.swing.JTextField();
 
         setClosable(true);
         setTitle("Inventario");
         getContentPane().setLayout(null);
 
-        jTextField2.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre"));
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(30, 20, 130, 50);
+        txtNombreMed.setBorder(javax.swing.BorderFactory.createTitledBorder("Nombre"));
+        getContentPane().add(txtNombreMed);
+        txtNombreMed.setBounds(30, 20, 130, 50);
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createTitledBorder("Caducidad"));
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(190, 20, 130, 50);
+        txtCadMedicamen.setBorder(javax.swing.BorderFactory.createTitledBorder("Caducidad"));
+        getContentPane().add(txtCadMedicamen);
+        txtCadMedicamen.setBounds(190, 20, 130, 50);
 
-        jTextField4.setBorder(javax.swing.BorderFactory.createTitledBorder("Precio"));
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(190, 100, 130, 50);
+        txtPreMedica.setBorder(javax.swing.BorderFactory.createTitledBorder("Precio"));
+        getContentPane().add(txtPreMedica);
+        txtPreMedica.setBounds(190, 100, 130, 50);
 
-        jTextField5.setBorder(javax.swing.BorderFactory.createTitledBorder("Codigo"));
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(350, 20, 130, 50);
+        txtCodMedic.setBorder(javax.swing.BorderFactory.createTitledBorder("Codigo"));
+        getContentPane().add(txtCodMedic);
+        txtCodMedic.setBounds(350, 20, 130, 50);
 
         jButton1.setText("Eliminar");
         getContentPane().add(jButton1);
         jButton1.setBounds(310, 180, 120, 50);
 
-        jButton2.setText("Nuevo Producto");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(30, 180, 120, 50);
+        btnMostrar.setText("Mostrar");
+        btnMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnMostrar);
+        btnMostrar.setBounds(180, 180, 120, 50);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbaregi.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -77,33 +95,50 @@ public class Inventario extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbaregi);
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(20, 250, 460, 230);
 
-        jButton3.setText("Agregar ");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(170, 180, 120, 50);
+        btnAgregar.setText("Agregar ");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAgregar);
+        btnAgregar.setBounds(30, 180, 120, 50);
 
-        jTextField6.setBorder(javax.swing.BorderFactory.createTitledBorder("Cantidad"));
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(30, 100, 130, 50);
+        txtCatMEdic.setBorder(javax.swing.BorderFactory.createTitledBorder("Cantidad"));
+        getContentPane().add(txtCatMEdic);
+        txtCatMEdic.setBounds(30, 100, 130, 50);
 
         setBounds(0, 0, 520, 531);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        String codigo = txtCodMedic.getText();
+        String nombre = txtNombreMed.getText();
+        
+        medicamento.setCodigo(codigo);
+        medicamento.setNombre(nombre);
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
+        tbaregi.setModel(metodos.listaMedicamento());
+    }//GEN-LAST:event_btnMostrarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnMostrar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTable tbaregi;
+    private javax.swing.JTextField txtCadMedicamen;
+    private javax.swing.JTextField txtCatMEdic;
+    private javax.swing.JTextField txtCodMedic;
+    private javax.swing.JTextField txtNombreMed;
+    private javax.swing.JTextField txtPreMedica;
     // End of variables declaration//GEN-END:variables
 }

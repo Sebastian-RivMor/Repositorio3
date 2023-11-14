@@ -3,16 +3,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class REGISTROMEDICAMENTOS {
-    private List<MEDICAMENTO> medicamentos;
+    private List<Medicamento> medicamentos;
     
     public REGISTROMEDICAMENTOS(){
         medicamentos= new ArrayList<>();
     }
-    public void agregarmedicamentos(MEDICAMENTO medicamento){
+    public void agregarmedicamentos(Medicamento medicamento){
         medicamentos.add(medicamento);
     }
   public void modificarMedicamento(String codigo, String nuevoNombre, int nuevaDosis, String nuevaFechaCaducidad) {
-        for (MEDICAMENTO medicamento : medicamentos) {
+        for (Medicamento medicamento : medicamentos) {
             if (medicamento.getCodigo().equals(codigo)) {
                 medicamento.setNombre(nuevoNombre);
                 medicamento.setDosis(nuevaDosis);
@@ -25,8 +25,8 @@ public class REGISTROMEDICAMENTOS {
     }
 
     public void eliminarMedicamento(String codigo) {
-        MEDICAMENTO medicamentoAEliminar = null;
-        for (MEDICAMENTO medicamento : medicamentos) {
+        Medicamento medicamentoAEliminar = null;
+        for (Medicamento medicamento : medicamentos) {
             if (medicamento.getCodigo().equals(codigo)) {
                 medicamentoAEliminar = medicamento;
                 break;
@@ -46,7 +46,7 @@ public class REGISTROMEDICAMENTOS {
             System.out.println("No hay medicamentos registrados.");
         } else {
             System.out.println("Lista de Medicamentos:");
-            for (MEDICAMENTO medicamento : medicamentos) {
+            for (Medicamento medicamento : medicamentos) {
                 System.out.println("Código: " + medicamento.getCodigo());
                 System.out.println("Nombre: " + medicamento.getNombre());
                 System.out.println("Dosis: " + medicamento.getDosis());
@@ -56,7 +56,7 @@ public class REGISTROMEDICAMENTOS {
         }
     }
 
-    public List<MEDICAMENTO> obtenerMedicamentos() {
+    public List<Medicamento> obtenerMedicamentos() {
         return medicamentos;
     }
 }
