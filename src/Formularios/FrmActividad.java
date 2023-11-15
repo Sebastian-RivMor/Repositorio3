@@ -47,7 +47,7 @@ public class FrmActividad extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
         getContentPane().add(EscritorioPrincipal);
-        EscritorioPrincipal.setBounds(0, 0, 670, 380);
+        EscritorioPrincipal.setBounds(0, 0, 760, 550);
 
         jMenu1.setText("Archivo");
 
@@ -93,7 +93,7 @@ public class FrmActividad extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        setSize(new java.awt.Dimension(690, 440));
+        setSize(new java.awt.Dimension(753, 583));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

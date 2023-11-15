@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Ventanas;
 
 import Clases.Metodo;
@@ -11,7 +15,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Inventario extends javax.swing.JInternalFrame {
 
-    Medicamento medicamento = new Medicamento();
+    Medicamento med = new Medicamento("Nombre", 0, "Fecha", "Código", 0.0f); // Proporciona valores adecuados
+
     Metodo metodos = new Metodo();
     
     DefaultTableModel mdltabla;
@@ -24,6 +29,10 @@ public class Inventario extends javax.swing.JInternalFrame {
         vCabeceras.addElement("Cantidad");
         vCabeceras.addElement("Fecha. Cad");
         vCabeceras.addElement("Precio");
+
+        mdltabla = new DefaultTableModel();  // Agrega esta línea para inicializar el modelo
+        mdltabla.setColumnIdentifiers(vCabeceras);
+
         tbaregi.setModel(mdltabla);
     }
 
@@ -47,7 +56,6 @@ public class Inventario extends javax.swing.JInternalFrame {
         btnAgregar = new javax.swing.JButton();
         txtCatMEdic = new javax.swing.JTextField();
 
-        setClosable(true);
         setTitle("Inventario");
         getContentPane().setLayout(null);
 
@@ -115,9 +123,12 @@ public class Inventario extends javax.swing.JInternalFrame {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         String codigo = txtCodMedic.getText();
         String nombre = txtNombreMed.getText();
-        
-        medicamento.setCodigo(codigo);
-        medicamento.setNombre(nombre);
+            int cantidad = Integer.parseInt(txtCatMEdic.getText()); // Convierte el texto a entero
+
+    // Configurar el objeto med
+    med.setCodigo(codigo);
+    med.setNombre(nombre);
+    med.setDosis(cantidad);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed

@@ -51,7 +51,7 @@ public class Venta_Empleado extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField1);
         jTextField1.setBounds(200, 20, 410, 60);
         getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(230, 140, 50, 10);
+        jSeparator1.setBounds(230, 140, 0, 2);
         getContentPane().add(jSeparator2);
         jSeparator2.setBounds(40, 90, 570, 10);
 
@@ -99,7 +99,7 @@ public class Venta_Empleado extends javax.swing.JInternalFrame {
         getContentPane().add(jButton3);
         jButton3.setBounds(240, 400, 140, 40);
 
-        pack();
+        setBounds(0, 0, 656, 505);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
