@@ -1,6 +1,4 @@
-
 package Clases;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -11,10 +9,7 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.Element;
-
-
 public class Metodo {
-    
     Vector vInventario = new Vector();
     
     public void guardar(Medicamento unMedicamento){
