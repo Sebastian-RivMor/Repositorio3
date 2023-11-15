@@ -5,11 +5,25 @@
  */
 package Ventanas;
 
+import Clases.Metodo;
+
 /**
  *
  * @author usuario
  */
 public class Venta_Empleado extends javax.swing.JInternalFrame {
+
+    private Metodo metodos;
+
+    public Venta_Empleado(Metodo metodos) {
+        initComponents();
+        this.metodos = metodos;
+        cargarDatosMedicamentos();
+    }
+
+    private void cargarDatosMedicamentos() {
+        jTable1.setModel(metodos.obtenerModeloMedicamentos());
+    }
 
     /**
      * Creates new form Venta_Empleado

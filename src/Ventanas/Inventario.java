@@ -15,10 +15,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Inventario extends javax.swing.JInternalFrame {
 
-    Medicamento med = new Medicamento("Nombre", 0, "Fecha", "Código", 0.0f); // Proporciona valores adecuados
-
+    Medicamento med = new Medicamento(); // Proporciona valores adecuados
     Metodo metodos = new Metodo();
-    
     DefaultTableModel mdltabla;
     Vector vCabeceras = new Vector();
     public Inventario() {
@@ -123,12 +121,15 @@ public class Inventario extends javax.swing.JInternalFrame {
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
         String codigo = txtCodMedic.getText();
         String nombre = txtNombreMed.getText();
-            int cantidad = Integer.parseInt(txtCatMEdic.getText()); // Convierte el texto a entero
+        int cantidad = Integer.parseInt(txtCatMEdic.getText()); // Convierte el texto a entero
 
     // Configurar el objeto med
-    med.setCodigo(codigo);
-    med.setNombre(nombre);
-    med.setDosis(cantidad);
+        med.setCodigo(codigo);
+        med.setNombre(nombre);
+        med.setDosis(cantidad);
+        
+        metodos.guardar(med);
+        metodos.guardarArchivo(med);
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
