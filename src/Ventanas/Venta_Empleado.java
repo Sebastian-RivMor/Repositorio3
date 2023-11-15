@@ -5,7 +5,9 @@
  */
 package Ventanas;
 
+import Clases.Medicamento;
 import Clases.Metodo;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -53,6 +55,7 @@ public class Venta_Empleado extends javax.swing.JInternalFrame {
         jButton2 = new javax.swing.JButton();
         jTextField5 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setClosable(true);
         getContentPane().setLayout(null);
@@ -109,9 +112,18 @@ public class Venta_Empleado extends javax.swing.JInternalFrame {
         getContentPane().add(jTextField5);
         jTextField5.setBounds(510, 240, 100, 60);
 
-        jButton3.setText("Recibo");
+        jButton3.setText("Reg.Venta");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton3);
-        jButton3.setBounds(240, 400, 140, 40);
+        jButton3.setBounds(230, 390, 140, 40);
+
+        jButton4.setText("Recibo");
+        getContentPane().add(jButton4);
+        jButton4.setBounds(420, 390, 140, 40);
 
         setBounds(0, 0, 656, 505);
     }// </editor-fold>//GEN-END:initComponents
@@ -120,11 +132,30 @@ public class Venta_Empleado extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String codigo = txtCodMedic.getText();
+        String nombre = txtNombreMed.getText();
+        int cantidad = Integer.parseInt(txtCatMEdic.getText());
+
+        // Configurar el objeto med
+        Medicamento med = new Medicamento();
+        med.setCodigo(codigo);
+        med.setNombre(nombre);
+
+        // Agregar a la tabla en el formulario actual
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.addRow(new Object[]{codigo, nombre, cantidad, med.getFechaCaducidad(), med.getPrecio()});
+
+        // Guardar la compra en la lista de compras
+        metodos.guardarCompra(med, cantidad);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

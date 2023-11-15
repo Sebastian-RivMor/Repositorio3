@@ -5,17 +5,25 @@
  */
 package Ventanas;
 
+import Clases.Metodo;
+
 /**
  *
  * @author usuario
  */
 public class Registro_Ventas extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Registro_Ventas
-     */
+    private Metodo metodos;
+    
     public Registro_Ventas() {
         initComponents();
+        
+        this.metodos = metodos;
+        cargarDatosCompras();
+    }
+    
+    private void cargarDatosCompras() {
+        jTable1.setModel(metodos.listaMedicamento());
     }
 
     /**

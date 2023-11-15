@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
 import java.util.Vector;
@@ -85,5 +86,20 @@ public class Metodo {
         }
 
         return mdlTabla;
+    }
+    
+    public void guardarCompra(Medicamento medicamento, int cantidad) {
+        try (PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("Compras.txt", true)))) {
+            pw.println(
+                    medicamento.getCodigo() + "," +
+                    medicamento.getNombre() + "," +
+                    cantidad + "," +
+                    medicamento.getFechaCaducidad() + "," +
+                    medicamento.getPrecio()
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 }
